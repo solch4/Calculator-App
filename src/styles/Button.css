@@ -1,0 +1,29 @@
+.button-container {
+  height: 83px;
+  display: flex;
+  flex: 1 1; /* prop definida en flexbox, longitud flexible. indica cuánto se puede encoger o expandir el componente en base a otros componentes q tenga cerca. cuando le decimos 1 1 le decimos a css q queremos q esos elementos se distribuyan el esapcio de forma equitativa, q no haya uno más grande q el otro, mismo ancho y altura. por ej si tengo dos botones se dividen ele spacio mita y mita, si tengo 3 ocupa 1/3 del esapcio c/u */
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 38px;
+  background-color: palevioletred;
+  color: white;
+  border-radius: 25px;
+  border: 2px solid white;
+  margin: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button-container:hover{
+  background-color: rgb(153, 67, 96);
+}
+
+.operator{
+  background-color: salmon;
+}
+
+.operator:hover{
+  background-color: rgb(158, 73, 64);
+}
+
