@@ -1,7 +1,10 @@
 .App{
+    /* background-color: #ff9286; */
+    background: rgb(255,153,153);
+    background: -moz-radial-gradient(circle, rgba(255,153,153,1) 0%, rgba(255,238,122,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(255,153,153,1) 0%, rgba(255,238,122,1) 100%);
+    background: radial-gradient(circle, rgba(255,153,153,1) 0%, rgba(255,238,122,1) 100%);    height: 100vh;
     height: 100vh;
-    padding-top: 10px;
-    background-color: darkmagenta;
     font-family: Lato, sans-serif;
     display: flex;
     flex-wrap: wrap;
@@ -9,30 +12,45 @@
     align-items: center;
 }
 
-.logo-contenedor{
+h1{
     width: 100%;
-    height: 50px;
-    margin: 8px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.logo{
-    height: 40px;
+    color: white;
 }
 
 .calculator-container{
-    width: 400px;
-    height: 600px;
-    padding: 14px;
-    background-color: pink;
+    width: 325px;
+    height: 425px;
+    padding: 22px;
+    background-color: #ffccd5;
     border-radius: 20px;
-    border: 5px solid white;
+    border: 3px solid #fff0f3;
 }
 
 .fila{
-    margin: 4px;
+    margin: 2px;
     display: flex;
     justify-content: center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+footer{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    font-size: large;
+}
+
+#linktree{
+    font-weight: bold;
 }

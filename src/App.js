@@ -1,44 +1,73 @@
 import './App.css';
-import logo from './images/solcito.png'
 import Button from './components/Button';
+import Screen from './components/Screen';
+import ClearButton from './components/ClearButton';
+import { useState } from 'react'
+import  { evaluate } from 'mathjs'
 
 function App() {
+  const [input, setInput] = useState('')
+
+  const addInput = val => {
+    setInput(input + val)
+    if ((input + val).length > 17) {
+      alert('Number limit reached.')
+      setInput(input)
+    }
+  }
+  const calculateResult = () => {
+    if(input) setInput(evaluate(input))
+    else alert('Please enter values.')
+  }
+
   return (
     <div className="App">
-      <div className='logo-contenedor'>
-        <img 
-          src={logo}
-          className='logo'
-          alt='Developed by Solcito'
-        />
+      <h1>Calculator App</h1>
+      <div className="calculator-container">
+        <Screen input={input} />
+        <div className="fila">
+          <Button clickHandler={addInput}>1</Button>
+          <Button clickHandler={addInput}>2</Button>
+          <Button clickHandler={addInput}>3</Button>
+          <Button clickHandler={addInput}>+</Button>
+        </div>
+        <div className="fila">
+          <Button clickHandler={addInput}>4</Button>
+          <Button clickHandler={addInput}>5</Button>
+          <Button clickHandler={addInput}>6</Button>
+          <Button clickHandler={addInput}>-</Button>
+        </div>
+        <div className="fila">
+          <Button clickHandler={addInput}>7</Button>
+          <Button clickHandler={addInput}>8</Button>
+          <Button clickHandler={addInput}>9</Button>
+          <Button clickHandler={addInput}>*</Button>
+        </div>
+        <div className="fila">
+          <Button clickHandler={calculateResult}>=</Button>
+          <Button clickHandler={addInput}>0</Button>
+          <Button clickHandler={addInput}>.</Button>
+          <Button clickHandler={addInput}>/</Button>
+        </div>
+        <div className="fila">
+          <ClearButton clearHandler={() => setInput("")} />
+        </div>
       </div>
-      <div className='calculator-container'>
-        <div className='fila'>
-          <Button>1</Button>
-          <Button>2</Button>
-          <Button>3</Button>
-          <Button>+</Button>
-        </div>
-        <div className='fila'>
-          <Button>4</Button>
-          <Button>5</Button>
-          <Button>6</Button>
-          <Button>-</Button>
-        </div>
-        <div className='fila'>
-          <Button>7</Button>
-          <Button>8</Button>
-          <Button>9</Button>
-          <Button>*</Button>
-        </div>
-        <div className='fila'>
-          <Button>=</Button>
-          <Button>0</Button>
-          <Button>.</Button>
-          <Button>/</Button>
-        </div>
-        <div className='fila'></div>
-      </div>
+      
+      <footer>
+        <p>
+          App developed by
+          <a
+            id="linktree"
+            href="https://linktr.ee/solch4"
+            target="_blank"
+            rel='noreferrer'
+          >
+            &nbsp;Solcito&nbsp;
+          </a>
+          (╯°□°）╯︵ ┻━┻
+        </p>
+      </footer>
     </div>
   );
 }
