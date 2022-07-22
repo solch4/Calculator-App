@@ -17,12 +17,12 @@ function App() {
   }
   const calculateResult = () => {
     if(input) setInput(evaluate(input))
-    else alert('Please enter values.')
+    else alert('Please enter a value.')
   }
 
   return (
     <div className="App">
-      <h1>Calculator App</h1>
+      <h1>Calculator</h1>
       <div className="calculator-container">
         <Screen input={input} />
         <div className="fila">
