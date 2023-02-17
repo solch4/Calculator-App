@@ -19,3 +19,8 @@
 .clear-button:hover{
   background-color: #c9184a;
 }
+
+.clear-button:active{
+  transform: translateY(3px);
+  box-shadow: none;
+}
